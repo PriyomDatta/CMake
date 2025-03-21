@@ -8,3 +8,58 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+
+######################################## NEED TO TEST ########################################
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Create build directory
+      run: mkdir build
+
+    - name: Change to build directory
+      run: cd build
+
+    - name: Run cmake
+      run: cmake ..
+
+    - name: Change back to root directory
+      run: cd ..
+
+    - name: Build project
+      run: cmake --build build --verbose
+
+    - name: Run executable
+      run: ./build/main
+
+    - name: Clean up build directory
+      run: rm -rf build
+
+  merge:
+    needs: build
+    runs-on: ubuntu-latest
+    if: success()
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Merge changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git checkout main
+        git merge ${{ github.ref }}
+        git push origin main
