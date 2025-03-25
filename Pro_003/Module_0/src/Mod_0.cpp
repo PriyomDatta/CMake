@@ -1,4 +1,5 @@
 #include<iostream>
+#include<math.h>
 #include "../inc/Mod_0.hpp"
 
 void indecator(void);
@@ -22,10 +23,8 @@ int GetMod0Value(int val){
                 return val*rem;
             case 3:
                 return val/rem;
-            case 4:
-                return val%rem;
             default:
-                return val^rem;
+                return pow(val,rem);
         }
     }
 }
