@@ -1,3 +1,5 @@
+set -e
+
 # Step 1: remove previous build
 rm -rf build
 
