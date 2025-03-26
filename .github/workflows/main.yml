@@ -1,0 +1,29 @@
+name: CI Pipeline for Proj_003 only
+
+on:
+  pull_request:
+    branches:
+      - master
+    types: [opened, synchronize, reopened]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up build environment
+      run: sudo apt-get update && sudo apt-get install -y build-essential
+
+    - name: Build project
+      run: |
+        cd Proj_003
+        ./build_proj.sh
+
+    - name: Check build status
+      if: failure()
+      run: |
+        echo "Build failed, cancelling merge request."
+        gh pr close ${{ github.event.pull_request.number }} --comment "Build failed, merge request cancelled."
