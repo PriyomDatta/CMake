@@ -11,6 +11,6 @@ int main() {
     std::cout << "\nResult of 5+5 is :"<<fun2(5,5,'+');
     std::cout << "\nResult of 5-5 is :"<<fun2(5,5,'-');
     std::cout << "\nResult of 5*5 is :"<<fun2(5,5,'*');
-    std::cout << "\nResult of 5/5 is :"<<fun2(5,5,'/');
+    std::cout << "\nResult of 5/5 is :"<<fun2(5,5,'/')
     return 0;
 }
