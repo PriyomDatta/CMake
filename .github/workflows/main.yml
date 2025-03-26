@@ -3,7 +3,7 @@ name: CI Pipeline for Proj_003 only
 on:
   pull_request:
     branches:
-      - master
+      - main
     types: [opened, synchronize, reopened]
     
 jobs:
