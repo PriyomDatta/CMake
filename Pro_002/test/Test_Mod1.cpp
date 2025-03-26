@@ -26,9 +26,9 @@ TEST(Fun2Test, Division) {
 }
 
 // Test division by zero
-/*TEST(Fun2Test, DivisionByZero) {
+TEST(Fun2Test, DivisionByZero) {
     EXPECT_THROW(fun2(10, 0, '/'), std::runtime_error); // Handle division by zero if implemented
-}*/
+}
 
 // Test default case
 TEST(Fun2Test, DefaultCase) {
