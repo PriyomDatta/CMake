@@ -23,7 +23,7 @@ jobs:
         ./build_proj.sh
 
     - name: Check build status
-      if: failure()
+      if: ${{ failure() }}
       run: |
         echo "Build failed, cancelling merge request."
         gh pr close ${{ github.event.pull_request.number }} --comment "Build failed, merge request cancelled."
