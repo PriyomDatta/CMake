@@ -12,7 +12,7 @@ int main() {
     std::cout<<GetMod0Value(8);
     std::cout<<GetMod0Value(9);
     std::cout<<GetMod0Value(10);
-    std::cout<<GetMod0Value(11);
+    std::cout<<GetMod0Value(11)
     std::cout <<"\nExecution ended"<<std::endl;
     return 0;
 }
