@@ -27,3 +27,9 @@ jobs:
       run: |
         echo "Build failed, cancelling merge request."
         gh pr close ${{ github.event.pull_request.number }} --comment "Build failed, merge request cancelled."
+
+    - name: Run tests
+      if: ${{ success() }}
+      run: |
+        cd Pro_002/build
+        ./testexe
