@@ -23,8 +23,15 @@ file(GLOB_RECURSE SOURCES
 # Add executable
 add_executable(mainexe ${SOURCES})
 
-# Add Google Test
-add_subdirectory(googletest)
+# Fetch and include Google Test
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/release-1.11.0.zip
+)
+FetchContent_MakeAvailable(googletest)
+
+# Include Google Test directories
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 # Test source files
