@@ -19,7 +19,7 @@ jobs:
 
     - name: Build project
       run: |
-        cd Proj_003
+        cd Pro_003
         ./build_proj.sh
 
     - name: Check build status
