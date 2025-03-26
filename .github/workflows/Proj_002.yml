@@ -21,6 +21,7 @@ jobs:
       run: |
         cd Pro_002
         ./build_proj.sh
+        ./build/testexe
 
     - name: Check build status
       if: ${{ failure() }}
