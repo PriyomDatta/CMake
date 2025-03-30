@@ -11,7 +11,7 @@ Explanation:-
 3. To run the testexecutable
 
 Related to CMake:-
-1. configure_file() is used to conigure a file
+1. configure_file() is used to configuration a file
 2. include_directories() is used to add the include directories
 3. file() To create collection of files
 4. add_executable() To create executable
