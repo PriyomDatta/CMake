@@ -1,0 +1,9 @@
+# Ignore all .log files
+#*.log
+
+# Ignore specific file
+#example.txt
+
+# Ignore a directory
+#/path/to/directory/
+build
